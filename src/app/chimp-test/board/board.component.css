@@ -1,0 +1,21 @@
+#board {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr); /* 5 rows of equal height */
+    grid-template-columns: repeat(8, 1fr); /* 8 columns of equal width */
+    gap: 10px; /*Optional: spacing between grid items /*
+    width: 100%; /* Optional: container width */
+    height: 100%; /* Optional: container height */
+    justify-content: space-around; /* Optional: horizontal alignment */
+
+}
+
+#boardcontainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

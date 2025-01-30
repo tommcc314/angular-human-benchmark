@@ -1,0 +1,10 @@
+.square {
+    /* background-color: #f0f0f0; Optional: item background color */
+    border: 1px solid #ccc; 
+    display: block;
+    /* display: flex; 
+    align-items: center; 
+    
+    justify-content: center; */
+    padding: 20px;
+  }

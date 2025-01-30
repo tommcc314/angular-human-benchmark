@@ -1,30 +1,27 @@
-<div>
-    
-    <div id="reactiontimebox" (click)="progress()" [style.backgroundColor]="boxcolor()">
-        @switch (gamestatus()) {
-            @case ("not_started") {
-                <h3>Reaction Time</h3>
-                <h6>When the red box turns green, click as quickly as you can. Click anywhere to start.</h6>
-            }
-            @case ("before_change") {
-                <h4>Wait for green</h4>
-            }
-            @case ("after_change") {
-                <h4>Click!</h4>
-            }
-            @case ("invalid_click") {
-                <h4>Oops! You clicked too fast. </h4>
-                <h6>Click to try again.</h6>
-            }
-            @case ("between_rounds") {
-                <h4>Time: {{times[round() - 1]}} milliseconds</h4>
-                <h6>Click to continue.</h6>
-            }
-            @case ("ended") {
-                <h4>Your average Time is {{getAvgTime()}} milliseconds</h4>
-                <h6>Click to play again.</h6>
-            }
-
+<div id="reactiontimebox" (click)="progress()" [style.backgroundColor]="boxcolor()">
+    @switch (gamestatus()) {
+        @case ("not_started") {
+            <h3>Reaction Time</h3>
+            <h6>When the red box turns green, click as quickly as you can. Click anywhere to start.</h6>
         }
-    </div>
+        @case ("before_change") {
+            <h4>Wait for green</h4>
+        }
+        @case ("after_change") {
+            <h4>Click!</h4>
+        }
+        @case ("invalid_click") {
+            <h4>Oops! You clicked too fast. </h4>
+            <h6>Click to try again.</h6>
+        }
+        @case ("between_rounds") {
+            <h4>Time: {{times[round() - 1]}} milliseconds</h4>
+            <h6>Click to continue.</h6>
+        }
+        @case ("ended") {
+            <h4>Your average Time is {{getAvgTime()}} milliseconds</h4>
+            <h6>Click to play again.</h6>
+        }
+
+    }
 </div>

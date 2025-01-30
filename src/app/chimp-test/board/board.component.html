@@ -1,0 +1,36 @@
+<div id="boardcontainer">
+    @switch (gamestatus()){
+        @case ("not_started") {
+            <h3>Are you smarter than a chimpanzee?</h3>
+            <h6>Click the squares in order of numbers.</h6>
+            <h6>The test will get progressively harder.</h6>
+            <button (click)="progress()">Start</button>
+        }
+        @case ("level_start") {
+            <div id="board" >
+                @for (square of squares(); track square) {
+                    <Square [totalSquares]="totalSquares()" [displayMax]="displayMax()" [id]=square (updateCurrSquare)="updateClickedSquare($event)" (progress)="progress()"></Square>
+                }
+            </div>
+        }
+        @case ("in_progress") {
+            <div id="board" >
+                @for (square of squares(); track square) {
+                    <Square [totalSquares]="totalSquares()" [displayMax]="displayMax()" [id]=square (updateCurrSquare)="updateClickedSquare($event)" (progress)="progress()"></Square>
+                }
+            </div>
+        }
+        @case ("between_levels") {
+            <h4>Numbers: {{totalSquares()}}</h4>
+            <h4>Strikes: {{strikes}} of {{maxstrikes}}</h4>
+            <button (click)="progress()">Continue</button>
+        }
+        @case ("game_over") {
+            <h4>Final Score: {{totalSquares()}}</h4>
+            <h4>Strikes: {{strikes}} of {{maxstrikes}}</h4>
+            <button (click)="progress()">Play again</button>
+        }
+    }
+    
+</div>
+    
